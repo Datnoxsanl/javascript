@@ -13,7 +13,8 @@ body {
     width: 400px;
     margin: 100px auto;
     background: #fff;
-    padding: 10px 0px;
+    padding-top: 10px;
+    overflow: hidden;
     border-radius: 6px;
 }
 
@@ -42,18 +43,36 @@ form button{
   border: none;
   outline: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-li{
+.todos{
     list-style-type: none;
 }
 
-.todo li{
+.todos li{
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
+  font-size: 22px;
+  cursor: pointer;
 }
 
+.todos li span{
+  text-overflow: ellipsis;
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+li.completed{
+  color: #aaa;
+}
+
+li.completed span{
+  text-decoration: line-through;
+
+}
 
