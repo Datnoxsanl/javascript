@@ -71,3 +71,25 @@ function init(){
 }
 
 init();
+
+
+var arr = [{
+  name: 'ip1',
+  price: 1000,
+  date: '20-01-2020'
+},{
+  name: 'ip2',
+  price: 3000,
+  date: '20-01-2020'
+}, {
+  name: 'ip1X',
+  price: 1500,
+  date: '25-01-2022'
+}];
+
+// Tính toán giảm giá và thêm trường salePrice vào mỗi đối tượng
+arr.forEach(function(item) {
+  item.salePrice = item.price * 0.8; // Giảm giá 20%
+});
+
+console.log(arr);
