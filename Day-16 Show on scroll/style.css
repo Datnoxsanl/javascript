@@ -1,0 +1,96 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+section{
+    height: 100vh;
+    overflow: hidden;
+}
+
+#home{
+    background-image: linear-gradient(to right, #4daf54, #3d8880);
+    color: #fff;
+    padding: 100px;
+
+}
+
+#home h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+ background: #242628;
+ width: 500px;
+ padding: 20px;
+ color: #fff;
+ margin: 20px 40px;
+ height: 200px;
+ border-radius: 20px;
+}
+
+.box .title{
+    font-size: 30px;
+}
+
+#team{
+    background: linear-gradient(180deg, #017c2c 50%, #fff 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member{
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px solid #dadada;
+
+}
+
+.member .info{
+    color: #017c2c;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* animation */
+.left-to-right{
+    transform: translateX(-200%);
+    transition: 1s ease-in-out;
+}
+
+.left-to-right.start{
+    transform: translateX(0);
+}
+
+.right-to-left{
+    transform: translateX(+200%);
+    transition: 1s ease-in-out;
+}
+
+.right-to-left.start{
+    transform: translateX(0);
+}
+
+.zoom {
+	transform: scale(0);
+}
+
+.zoom.start {
+	transition: 0.5s ease-in-out;
+	transform: unset;
+}
