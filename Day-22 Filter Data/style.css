@@ -3,3 +3,70 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+}
+
+body{
+    display: flex;
+}
+
+.container{
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #e2f3e2;
+    margin: 100px auto;
+    margin-bottom: auto;
+    width: 1200px;
+    text-align: center;
+}
+
+.food-menu{
+    margin-bottom: 40px;
+}
+
+.food-menu button{
+    color: #0f9d58;
+    border: 1px solid #0f9d58;
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #fff;
+    margin: 8px;
+}
+
+.food-menu button:hover,
+.food-menu button:active{
+    color: #fff;
+    background-color: #0f9d58;
+}
+
+.food-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.food-item{
+    width: 20%;
+    height: 200px;
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.food-item:hover img{
+    transform: scale(2) rotate(90deg);
+}
+
+.hide{
+    display: none;
+}

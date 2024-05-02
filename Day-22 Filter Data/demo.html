@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 10px 20px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="control">
+        <button type="all">All</button>
+        <button type="salad">Salad</button>
+        <button type="drink">Drink</button>
+        <button type="meat">Meat</button>
+        <button type="dessert">Dessert</button>
+    </div>
+
+
+    <div class="container">
+        <img src="dessert1.jpg" alt="" type="dessert">
+        <img src="drinks1.jpg" alt="" type="drink">
+        <img src="drinks2.jpg" alt="" type="drink">
+        <img src="drinks3.jpg" alt="" type="drink">
+        <img src="meat1.jpg" alt="" type="meat">
+        <img src="meat2.jpg" alt="" type="meat">
+        <img src="salad1.jpg" alt="" type="salad">
+        <img src="salad2.jpg" alt="" type="salad">
+    </div>
+
+
+
+    <!-- Javascipt -->
+    <script>
+
+        // cach 1
+        //    var btnList = document.querySelectorAll('button');
+        //    var imgList = document.querySelectorAll('img');
+
+        //    btnList.forEach(btn=>{
+        //     btn.addEventListener('click',e=>{
+        //         let type = e.currentTarget.getAttribute('type');
+        //         imgList.forEach(img=>{
+        //             let foodType =img.getAttribute('type');
+        //             if(type=='all'|| foodType==type){
+        //                   img.classList.remove('hide')
+        //             }else{
+        //                  img.classList.add('hide')
+        //             }
+        //         })
+        //     })
+        //    })
+
+        //    cach 2
+        var imgList = document.querySelectorAll('img');
+        var container = document.querySelector('.container');
+        var btnList = document.querySelectorAll('button');
+        var arr = [];
+
+        imgList.forEach(item => {
+            arr.push({
+                src: item.src,
+                type: item.getAttribute('type')
+            });
+        });
+
+        btnList.forEach(btn => {
+            btn.addEventListener('click', e => {
+                let type = e.currentTarget.getAttribute('type');
+                let filterData = arr.filter(food => {
+                    return food.type == type;
+                });
+                render(filterData);
+            });
+        });
+
+        function render(list) {
+            container.innerHTML = ''; // Xóa dữ liệu hiện tại trong container
+            list.forEach(item => {
+                // Tạo một phần tử hình ảnh mới
+                let imgElement = document.createElement('img');
+                imgElement.src = item.src;
+                imgElement.setAttribute('type', item.type);
+                container.append(imgElement); // Thêm phần tử hình ảnh vào container
+            });
+        }
+
+    </script>
+</body>
+
+</html>
