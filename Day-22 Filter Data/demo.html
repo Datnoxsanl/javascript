@@ -89,12 +89,17 @@
 
         btnList.forEach(btn => {
             btn.addEventListener('click', e => {
-                let type = e.currentTarget.getAttribute('type');
-                let filterData = arr.filter(food => {
-                    return food.type == type;
-                });
-                render(filterData);
+        let type = e.currentTarget.getAttribute('type');
+        let filterData;
+        if (type === 'all') {
+            filterData = arr; // Sử dụng toàn bộ mảng arr
+        } else {
+            filterData = arr.filter(food => {
+                return food.type == type;
             });
+        }
+        render(filterData);
+    });
         });
 
         function render(list) {
